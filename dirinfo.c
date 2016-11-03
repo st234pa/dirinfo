@@ -30,9 +30,7 @@ int main(){
     if (d->d_type == 4){  
       printf("/");
     }
-    else {
-      t+=size(d);
-    }
+    t+=size(d);
     printf("\n");
   }
   print_total_size(t);
