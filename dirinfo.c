@@ -17,7 +17,7 @@ off_t size(struct dirent *d) {
   struct stat buf;
   stat(d->d_name, &buf);
   int size;
-  size = buff.st_size;
+  size = buf.st_size;
   return size;
 }
 
