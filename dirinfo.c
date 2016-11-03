@@ -13,13 +13,13 @@ void print_total_size(int size) {
   printf("Total size: %.1f %s\n", size, units[i]);
 }
 
-off_t size(struct dirent *d) {
+/*int size(struct dirent *d) {
   struct stat buf;
   stat(d->d_name, &buf);
   int size;
   size = buf.st_size;
   return size;
-}
+  }*/
 
 int main(){
   struct dirent *d;
@@ -30,7 +30,11 @@ int main(){
     if (d->d_type == 4){  
       printf("/");
     }
-    t+=size(d);
+    struct stat buf;
+    stat(d->d_name, &buf);
+    int size;
+    size = buf.st_size;
+    t+=size;
     printf("\n");
   }
   print_total_size(t);
