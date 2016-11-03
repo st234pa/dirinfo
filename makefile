@@ -7,7 +7,6 @@ dirinfo.c: dirinfo.c
 	$(GCC) -c dirinfo.c
 
 clean:
-	rm *.o
 	rm *~
 
 run: all
